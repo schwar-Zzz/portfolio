@@ -1,44 +1,49 @@
-import { useLocation } from "react-router-dom";
-import { cn } from "../lib/utils";
-import { Link } from "react-router-dom";
-import { navbarConfig } from "../config/navbar.config";
-
-import { Menubar, MenubarContent } from "@/components/ui/menubar"
+import { Link, useLocation } from 'react-router-dom';
+import { navbarConfig } from '../config/navbar.config';
 
 export default function Navbar() {
   return (
-    <Menubar>
-      {navbarConfig.map((item, index) => (
-        <NavItem
-          key={index}
-          url={item.url}
-          className={cn(
-            index === 0 && "rounded-l-lg border-l-[0.5px]",
-            index === navbarConfig.length - 1 && "rounded-r-lg border-r-[0.5px]"
-          )}
-        >
-          {item.title}
-        </NavItem>
-      ))}
-    </Menubar>
+    <div className="mb-8">
+      <nav className="flex flex-wrap justify-center gap-2 p-2 bg-[#181818] rounded-2xl w-fit mx-auto">
+        {navbarConfig.map((item, index) => (
+          <NavItem
+            key={index}
+            url={item.url}
+            className={index === 0 ? "rounded-l-xl" : 
+                     index === navbarConfig.length - 1 ? "rounded-r-xl" : ""}
+          >
+            {item.title}
+          </NavItem>
+        ))}
+      </nav>
+    </div>
   );
 }
 
-type NavItemProps = {
+interface NavItemProps {
   children: React.ReactNode;
   url: string;
   className?: string;
-};
+}
 
 const NavItem = ({ children, url, className }: NavItemProps) => {
   const location = useLocation();
-  // const active = location.pathname === url || (location.pathname.includes(url) && url !== "/");
+  const active = location.pathname === url || (location.pathname.includes(url) && url !== "/");
 
   return (
     <Link to={url}>
-      <MenubarContent>
+      <div
+        className={`
+          flex items-center px-4 py-2 rounded-xl font-medium transition-all duration-300 ease-in-out
+          ${active 
+            ? 'bg-black shadow-md transform scale-105' 
+            : 'bg-black text-gray-600 hover:text-gray-800 hover:bg-[#181818]'
+          }
+          ${className || ""}
+        `}
+      >
         {children}
-      </MenubarContent>
+      </div>
     </Link>
   );
-};
+}; 

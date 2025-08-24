@@ -6,5 +6,9 @@ export const navbarConfig = [
     {
       title: "Projects",
       url: "/projects"
+    },
+    {
+      title: "Education",
+      url: "/education"
     }
   ];

@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 import Projects from './pages/Projects';
 import Experience from './pages/Experience';
+import Education from './pages/Education';
 import Hero from './components/Hero.tsx';
 import Navbar from './components/Navbar.tsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -17,7 +18,7 @@ function LandingPageLayout({ children }: { children: React.ReactNode }) {
       </div>
       
       {/* Right Column - Navigation & Content */}
-      <div className="relative w-full mt-3 max-w-4xl mx-auto lg:mt-0 lg:h-full lg:w-3/5 p-2 md:p-8 lg:overflow-y-scroll">
+      <div className="relative w-full mt-3 max-w-4xl mx-auto lg:mt-0 lg:h-full lg:w-3/5 p-2 md:p-8 lg:overflow-y-scroll no-scrollbar ">
         <Navbar />
         {children}
       </div>
@@ -45,6 +46,11 @@ function App() {
               <Projects />
             </LandingPageLayout>
           } />
+          <Route path="/education" element={
+            <LandingPageLayout>
+              <Education/>
+            </LandingPageLayout>
+          }/>
         </Routes>
       </div>
     </Router>
