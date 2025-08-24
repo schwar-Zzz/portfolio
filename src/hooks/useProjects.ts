@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Project } from '@/types/project';
+import type { Project } from '@/types/project';
 import { projects } from '@/config/projects.config';
 
 export const useProjects = () => {

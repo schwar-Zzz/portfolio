@@ -24,7 +24,7 @@
 //   );
 // }
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button"; // Fix: capitalize Button
 import { IconMap } from "./icon-map";
 import {portfolioConfig} from "@/config/portfolio.config" 
 
@@ -40,7 +40,7 @@ export const Socials = () => {
           Resume
         </a>
       </Button>
-      {Object.keys(portfolioConfig.links).map((key: string, index: number) => {
+      {Object.keys(portfolioConfig.links).map((key: string) => { // Fix: remove unused index parameter
         const link =
           portfolioConfig.links[key as keyof typeof portfolioConfig.links];
         return (
