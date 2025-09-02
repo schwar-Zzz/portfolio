@@ -20,7 +20,7 @@ export const projects = [
     stack: ['React', 'Css', 'Hooks', 'openweathermap api'],
     liveUrl: 'https://schwrazstudioweather-app.vercel.app/',
     githubUrl: 'https://github.com/schwar-Zzz/Weather_App',
-    featured: true 
+    featured: false
   }
 ];
 
