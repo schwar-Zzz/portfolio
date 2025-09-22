@@ -7,7 +7,7 @@ export const portfolioConfig= {
   links: {
     github: "https://github.com/schwar-Zzz",
     twitter: "https://x.com/hdfn_zzz",
-    mail: "ToMail:abdelbasset.hadfani@gmail.com",
+    mail: "mailto:abdelbasset.hadfani@gmail.com",
     discord: "https://discord.com/users/455218843892056084",
     linkedin: "https://www.linkedin.com/in/abdelbasset-hadfani-441a5319a/",
   }
