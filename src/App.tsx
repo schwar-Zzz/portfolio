@@ -5,6 +5,8 @@ import Education from './pages/Education';
 import Hero from './components/Hero.tsx';
 import Navbar from './components/Navbar.tsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Bat from "./components/ui/bat/Bat.tsx" ;
+
 
 
 function LandingPageLayout({ children }: { children: React.ReactNode }) {
@@ -14,6 +16,7 @@ function LandingPageLayout({ children }: { children: React.ReactNode }) {
     <div className="w-full h-full rounded-2xl sm:border sm:border-white/20 flex flex-wrap justify-between lg:divide-x lg:divide-white/20">
       {/* Left Column - Hero Section */}
       <div className="w-full lg:w-2/5 p-2 md:p-8 lg:h-full lg:overflow-y-hidden">
+        {/* <Bat /> */}
         <Hero />
       </div>
       

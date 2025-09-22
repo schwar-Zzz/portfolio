@@ -1,5 +1,6 @@
 import { Socials } from './Socials';
 import { Button } from './ui/Button';
+import Bat from './ui/bat/Bat'
 
 // Configuration objects (you can move these to separate config files later)
 const siteConfig = {
@@ -28,20 +29,16 @@ const skillsConfig = [
 
 export default function Hero() {
   return (
-    <section className="w-full flex flex-col lg:min-h-[calc(100vh-7rem)]">
-      <a href="/" className="font-mono text-sm underline hover:text-[#a264ff]">
-        {siteConfig.name}
-      </a>
+    <>
+      <Bat className=' mb-[250px] ml-15 lg:ml-80  lg:mb-[150px] size = lg'/>
+      <section className="w-full flex flex-col lg:min-h-[calc(100vh-7rem)]">
+
+
+      
       
       <div className="flex justify-between items-center mt-6">
         <h1 className="text-3xl  font-bold">{portfolioConfig.name}</h1>
         <div className="flex items-center gap-2">
-          <Button size="icon" variant="ghost" className="rounded-full">
-            <a href="#">
-              📡
-              <span className="sr-only">rss feed</span>
-            </a>
-          </Button>
         </div>
       </div>
       
@@ -73,6 +70,8 @@ export default function Hero() {
           </p>
         ))}
       </div>
+      
     </section>
+    </>
   );
 }
